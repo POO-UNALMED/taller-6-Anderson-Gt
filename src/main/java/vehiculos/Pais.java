@@ -2,6 +2,7 @@ package vehiculos;
 import java.util.*;
 
 public class Pais {
+	
 	ArrayList<Fabricante>listaf = new ArrayList<Fabricante>();
 	private static ArrayList<Pais>listap = new ArrayList<Pais>();
 	private String nombre;
@@ -36,15 +37,15 @@ public class Pais {
 	}
 	
 	public static Pais paisMasVendedor() {
-		int x = 0;
-		Pais s = new Pais();
-		
+		Pais aux=null;
+		int aux1=0;
 		for(int i=0;i<listap.size();i++) {
-			if(listap.get(i).getFabricas()>x) {
-				x = listap.get(i).getFabricas();
-				s = listap.get(i);
+			if(Collections.frequency(listap, listap.get(i))>aux1) {
+				aux=listap.get(i);
+				aux1=Collections.frequency(listap, listap.get(i));
 			}
-		}return s;
+		}
+		return aux;
 		
 	
 		
