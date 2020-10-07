@@ -37,15 +37,15 @@ public class Pais {
 	}
 	
 	public static Pais paisMasVendedor() {
-		Pais aux=null;
-		int aux1=0;
+		Pais x=null;
+		int aux=0;
 		for(int i=0;i<listap.size();i++) {
-			if(Collections.frequency(listap, listap.get(i))>aux1) {
-				aux=listap.get(i);
-				aux1=Collections.frequency(listap, listap.get(i));
+			if(Collections.frequency(listap, listap.get(i))>aux) {
+				x=listap.get(i);
+				aux=Collections.frequency(listap, listap.get(i));
 			}
 		}
-		return aux;
+		return x;
 		
 	
 		
