@@ -91,6 +91,9 @@ public class Vehiculo {
 	public int getCantidadVehiculos() {
 		return cantidadvh;
 	}
+	public static void setCantidadVehiculos(int cant) {
+		cantidadvh=cant;
+	}
 	
 	public String vehiculosPorTipo() {
 		return("Automoviles: "+Automovil.getCantidadAutomovil()+"\n"+"Camionetas: "+ Camioneta.getCantidadCamioneta()+"\n"+"Camiones: "+Camion.getCantidadCamion());
