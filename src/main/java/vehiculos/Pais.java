@@ -5,6 +5,7 @@ public class Pais {
 	ArrayList<Fabricante>listaf = new ArrayList<Fabricante>();
 	private static ArrayList<Pais>listap = new ArrayList<Pais>();
 	private String nombre;
+	private static int cantidadf;
 	
 	public Pais() {
 		
@@ -12,6 +13,10 @@ public class Pais {
 	public Pais(String nombre) {
 		this.setNombre(nombre);
 		listap.add(this);
+	}
+	public static void aumFabricas() {
+		cantidadf++;
+		
 	}
 	public String getNombre() {
 		return nombre;
@@ -26,16 +31,21 @@ public class Pais {
 			aux = aux + x.listav.size();
 		}return aux;
 	}
-	public Pais paisMasVendedor() {
-		Pais x = null;
-		if(listap.size()!=0) {
-			x = listap.get(0);
-			for(Pais s:listap) {
-				if(s.cantidadvh()>x.cantidadvh()) {
-					x = s;
-				}
+	public int getFabricas() {
+		return cantidadf;
+	}
+	
+	public static Pais paisMasVendedor() {
+		int x = 0;
+		Pais s = new Pais();
+		
+		for(int i=0;i<listap.size();i++) {
+			if(listap.get(i).getFabricas()>x) {
+				x = listap.get(i).getFabricas();
+				s = listap.get(i);
 			}
-		}return x;
+		}return s;
+		
 	
 		
 		
